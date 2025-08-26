@@ -1,0 +1,261 @@
+// IA.jsx
+// Estilo para o container principal do app IA
+.IA-main-div {
+  width: 60%;
+  max-width: 75%; // Impede que fique muito largo em telas grandes
+  height: 70%;
+  max-height: 75%; // Impede que fique muito alto em telas grandes
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $cor-background;
+  font-family: $fonte-principal;
+  color: $cor-texto-principal;
+  border-radius: $border-radius-padrao;
+  box-shadow: $box-shadow-padrao;
+  overflow: hidden;
+  padding: 0%;
+  align-self: center;
+
+
+}
+
+// Estilo para a seção de conteúdo (mensagens e respostas)
+.IA-content-div {
+  padding: $padding-padrao;
+  overflow-y: auto;
+  flex-grow: 1;
+
+  div {
+    margin: 0 0 $margin-padrao 0;
+    padding: $padding-padrao;
+    border-radius: $border-radius-padrao;
+    background-color: $cor-secundaria;
+    word-break: break-word; // Impede que palavras longas quebrem o layout
+
+    &.erro {
+      background-color: lighten($cor-erro, 35%);
+      color: $cor-erro;
+      border: 1px solid $cor-erro;
+    }
+
+    &.IA-resposta {
+      background-color: lighten($cor-sucesso, 45%);
+      color: $cor-sucesso;
+      border: 1px solid $cor-sucesso;
+      animation: show-to-right 0.5s ease-in-out;
+
+
+      h1,
+      h2,
+      h3 {
+        color: $cor-sucesso-forte;
+        margin: 1rem 0 0.5rem;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      pre {
+        background-color: #2a2a40;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1rem 0;
+      }
+
+      code {
+        background: #2e2e3f;
+        padding: 0.2em 0.4em;
+        border-radius: 4px;
+        font-family: monospace;
+        color: #f8f8f2;
+      }
+
+      ul,
+      ol {
+        margin: 0.5rem 0 0.5rem 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.3rem;
+      }
+
+      a {
+        color: #89ddff;
+        text-decoration: underline;
+      }
+
+    }
+
+    &.IA-prompt {
+      background-color: lighten($cor-primaria, 45%);
+      color: $cor-primaria;
+      border: 1px solid $cor-primaria;
+      animation: show-to-left 0.5s ease-in-out;
+    }
+  }
+}
+
+// Estilo para o formulário (sem alterações)
+.IA-form {
+  display: flex;
+  padding: $padding-padrao;
+  border-top: 1px solid $cor-borda;
+  background-color: #ffffff;
+
+  input[type="text"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid $cor-borda;
+    border-radius: $border-radius-padrao;
+    font-size: 1rem;
+    margin-right: $margin-padrao;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $cor-primaria;
+      box-shadow: 0 0 0 3px rgba($cor-primaria, 0.2);
+    }
+  }
+
+  button[type="submit"] {
+    padding: 12px 20px;
+    background-color: $cor-primaria;
+    color: $cor-texto-claro;
+    border: none;
+    border-radius: $border-radius-padrao;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($cor-primaria, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($cor-primaria, 20%);
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+}
+
+//Shell.jsx
+// Estilo para o container principal do app Shell
+.Shell-main-div {
+  width: 60%;
+  max-width: 75%;
+  height: 70%;
+  max-height: 75%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  font-family: $fonte-principal;
+  color: $cor-texto-principal;
+  border-radius: $border-radius-padrao;
+  box-shadow: $box-shadow-padrao;
+  padding: 0%;
+  align-self: center;
+  overflow: hidden;
+
+  .Shell-app-div{
+    width: 100%;
+    height: 100%;
+  }
+
+  .Shell-content-div {
+    flex: 1; // ocupa todo o espaço disponível dentro do Shell-main-div
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    .Input-shell-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+
+      span {
+        color: green;
+      }
+
+      input {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        border: none;
+        outline: none;
+        font-family: monospace;
+        padding: 0 5px;
+        word-break: break-word;
+      }
+    }
+    .Shell-command{
+      padding: 0px 8px;
+      color: white;
+    }
+
+  }
+}
+
+.Syfile-sh{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  #syfile-textarea{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    border: none;
+    outline: none;
+    padding: 10px;
+    resize: none; // Impede o redimensionamento manual
+    overflow-y: auto; // Permite rolagem vertical se o conteúdo for maior que a área visível
+  }
+
+  #syfile-commands{
+    display: flex;
+    justify-content: space-around;
+    color: #f8f8f2;
+    border-top: #f8f8f2 2px solid;
+  }
+
+}
+
+
+.minimized {
+  height: auto;
+  width: auto;
+  justify-content: center;
+  margin: 0;
+
+  .title-app {
+    .btn-maximize {
+      display: none;
+    }
+
+    &~* {
+      display: none;
+    }
+  }
+}
+
+.maximized {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  border-radius: 0;
+}
