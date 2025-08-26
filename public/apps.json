@@ -1,0 +1,12 @@
+{
+    "IA":{
+        "name": "Ia",
+        "version":"0.1.0",
+        "icon":"./assets/ai.png"
+    },
+    "Shell":{
+        "name": "Shell",
+        "version":"0.1.0",
+        "icon":"./assets/terminal.png"
+    }
+}
