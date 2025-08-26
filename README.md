@@ -54,8 +54,12 @@ Sylas é um projeto de sistema operacional completo baseado na web, desenvolvido
 
 * **React Router:** Para o gerenciamento de rotas e navegação na aplicação.
 
+  ### Observação
+  Este repositório é uma cópia de outro repositório já existente, localizado em https://github.com/LhRaphael/Sylas-java as alterações foram feitas no mesmo, esté é apenas o resultado final pois houve descuido dos participantes em notar que deveria haver um time no github classroom. No entanto, todos participaram da criação do projeto.
+
 * **Axios:** Para realizar requisições HTTP ao backend.
 
 * **SCSS/Sass:** Para estilização avançada e organizada dos componentes.
 
 * **Nerdamer:** Biblioteca para processamento de cálculos matemáticos no terminal.
+
